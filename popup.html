@@ -55,20 +55,10 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🌍 Hello World!</h1>
-    <p>Welcome to your first Firefox extension!</p>
-    
-    <button id="greetButton">Click Me!</button>
-    
-    <div id="message" class="message">
-      <p id="messageText"></p>
-    </div>
-
-    <button id="set-proxy">set proxy</button>
-    <button id="clear-proxy">clear proxy</button>
-  </div>
-  
+  <input type="text" id="host" placeholder="127.0.0.1"><br>
+  <input type="text" id="port" placeholder="8080"><br>
+  <button id="set-proxy">set proxy</button><br>
+  <button id="clear-proxy">clear proxy</button>
   <script src="popup.js"></script>
 </body>
 </html> 

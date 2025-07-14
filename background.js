@@ -2,32 +2,23 @@
 
 // Listen for messages from popup
 browser.runtime.onMessage.addListener(async function(message, sender, sendResponse) {
-//   if (message.action === 'buttonClicked') {
-//     console.log(`Hello World Extension: Button clicked ${message.count} times`);
-//     console.log(`Greeting: ${message.greeting}`);
-//     
-//     // You could do more here like:
-//     // - Store data in browser.storage
-//     // - Send notifications
-//     // - Interact with tabs
-//     // - Make API calls
-//     
-//     // Send response back to popup
-//     sendResponse({
-//       success: true,
-//       timestamp: new Date().toISOString()
-//     });
-//   }
-// 
-//   console.log("message =>", message);
-// 
-  if (message.action === 'setProxy') {
-    setProxy(message.host, message.port, "manual");
+
+  switch (message.action) {
+    case 'setProxy':
+      setProxy(message.host, message.port, "manual");
+      break;
+    case "clearProxy":
+      setProxy("127.0.0.1", "8080", "system");
+      break;
+    default:
+      console.error("Unknown action");
   }
 
-  if (message.action == "clearProxy") {
-    setProxy("127.0.0.1", "8080", "system");
-  }
+  sendResponse({
+    success: true,
+    message: "Action completed"
+  });
+
 });
 
 // Extension installation event
