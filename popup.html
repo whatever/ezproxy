@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      margin: 0;
+    }
+    
+    .container {
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+    
+    button {
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    
+    button:hover {
+      background: rgba(255,255,255,0.3);
+      border-color: rgba(255,255,255,0.5);
+      transform: translateY(-2px);
+    }
+    
+    .message {
+      margin-top: 15px;
+      padding: 10px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 Hello World!</h1>
+    <p>Welcome to your first Firefox extension!</p>
+    
+    <button id="greetButton">Click Me!</button>
+    
+    <div id="message" class="message">
+      <p id="messageText"></p>
+    </div>
+
+    <button id="set-proxy">set proxy</button>
+    <button id="clear-proxy">clear proxy</button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 

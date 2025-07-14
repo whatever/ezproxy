@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Hello World Extension",
+    "version": "1.0",
+    "description": "A simple Hello World Firefox extension",
+    "icons": {
+        "48": "icons/icon-48.png",
+        "96": "icons/icon-96.png"
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "Hello World Extension"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "proxy"
+    ]
+} 
